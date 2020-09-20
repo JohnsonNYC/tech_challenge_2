@@ -71,6 +71,43 @@ def get_songs():
     result = songs_schema.dump(all_songs)
     return jsonify(result)
 
+# Get single Song
+
+
+@app.route('/song/<id>', methods=['GET'])
+def get_song(id):
+    song = Song.query.get(id)
+    return song_schema.jsonify(song)
+
+# Update a Product
+
+
+@app.route('/song/<id>', methods=['PUT'])
+def update_song(id):
+    song = Song.query.get(id)
+
+    title = request.json['title']
+    artist = request.json['artist']
+    genre = request.json['genre']
+    year = request.json['year']
+
+    song.title = title
+    song.artist = artist
+    song.genre = genre
+    song.year = year
+
+    db.session.commit()
+    return song_schema.jsonify(song)
+
+
+# Delete Product
+@app.route('/song/<id>', methods=['DELETE'])
+def delete_song(id):
+    song = Song.query.get(id)
+    db.session.delete(song)
+    db.session.commit()
+    return song_schema.jsonify(song)
+
 
 # Run Server
 if __name__ == '__main__':
