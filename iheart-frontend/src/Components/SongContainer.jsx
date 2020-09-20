@@ -3,8 +3,8 @@ import React from 'react';
 const Songs = (props) => {
     
     return (
-        <div>
-            Songs
+        <div style={{textAlign:'center'}}>
+            Songs Page
         </div>
     );
 }

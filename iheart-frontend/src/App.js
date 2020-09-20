@@ -19,8 +19,8 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path='/' component={Homepage}/>
-        <Route path='/songs' component={SongContainer} songs={songs}/>
+        <Route path='/songs' render={(routerProps) => <SongContainer {...routerProps} songs={songs}/>}/>
+        <Route exact path='/' component={Homepage}/>
       </Switch>
     </div>
   );

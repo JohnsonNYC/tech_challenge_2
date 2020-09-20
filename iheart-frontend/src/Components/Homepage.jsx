@@ -1,14 +1,15 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const Homepage = (props) => {
     
     return (
         <div>
             <button>
-                Homepage
+                <Link to='/'>Homepage</Link>
             </button>
             <button>
-                Songs Container
+                <Link to='/songs' >Songs Container</Link>
             </button>
         </div>
     );
