@@ -3,7 +3,7 @@ import React from 'react'
 const SongItem = (props) => {
     const { song } = props
     return (
-        <tr>
+        <tr onClick={() => props.history.push(`/songs/${song.id}`)} >
             <td>{song.title}</td>
             <td>{song.artist}</td>
             <td>{song.genre}</td>

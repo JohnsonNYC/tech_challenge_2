@@ -13,6 +13,14 @@ table {
     min-width: 50vw;
 }
 
+.reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+}
+
 table,
 td {
     border: 1px solid #333;

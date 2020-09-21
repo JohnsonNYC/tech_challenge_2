@@ -6,12 +6,14 @@ import { Route, Switch } from 'react-router-dom'
 import Homepage from './Components/Homepage'
 import SongContainer from './Components/SongContainer'
 import Navbar from './Components/Navbar'
+import SongProfile from './Components/SongProfile'
 
 //API 
 const URL = 'http://localhost:5000/song'
 
 function App() {
   const [songs, setSongs] = useState([])
+  const [copy, setCopy] = useState([])
 
   async function fetchData() {
     const res = await fetch(URL);
@@ -30,15 +32,21 @@ function App() {
     let sortedSongs = [...songs].sort(function (a, b) {
       return ('' + a[attr]).localeCompare(b[attr]);
     })
-
-    setSongs(sortedSongs) // Why does my sort not work?
+    setCopy(songs)
+    setSongs(sortedSongs)
   }
 
+  const reset = () => {
+    if (copy.length > 0) {
+      setSongs(copy)
+    }
+  }
   return (
     <div className="App">
       <Navbar />
       <Switch>
-        <Route path='/songs' render={(routerProps) => <SongContainer {...routerProps} songs={songs} handleClick={handleClick} />} />
+        <Route path='/songs/:id' render={(routerProps) => <SongProfile {...routerProps} URL={URL} />} />
+        <Route path='/songs' render={(routerProps) => <SongContainer {...routerProps} songs={songs} handleClick={handleClick} reset={reset} />} />
         <Route exact path='/' component={Homepage} />
       </Switch>
     </div>
