@@ -27,7 +27,7 @@ function App() {
 
     let attr = e.target.innerText.toLowerCase();
 
-    let sortedSongs = songs.sort(function (a, b) {
+    let sortedSongs = [...songs].sort(function (a, b) {
       return ('' + a[attr]).localeCompare(b[attr]);
     })
 
