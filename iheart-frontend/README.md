@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+iHeartMedia - Music Lab - Code Challenge
+This challenge is designed to give us an idea of what point in the code spectrum you're currently on. There are no tricks, deceptive or complex issues to work through.
 
-## Available Scripts
+This does not need to be the fanciest, most complex, or most impressive code we've ever seen. Focus on human readability, then performance as a secondary factor.
 
-In the project directory, you can run:
+Everything will be written in JavaScript / Node, or TypeScript if you're feeling froggy.
 
-### `yarn start`
+Fork this repo and share the link when you are finished!
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+UI Checklist
+Create a client side rendered web app written with React. √
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+It is highly recommended to use create-react-app to accomplish this.√
+Create a React App using functional based components and hooks. No class based components, please. √
+The app needs to have at least 2 pages (views): √
 
-### `yarn test`
+A landing page. √
+A page renders a table displaying a list songs coming from the API. √
+On mount of the this page, make a request to your API, fetching the songs and display the results in a table. √
+Feel free to use whatever attributes you'd like (artist, song name, label, etc.) √
+Use React Router to allow the user to change the page they are viewing. √
+Style is not important, meaning you won't be evaluated on looks or design. If you'd like to make it look nice, by all means.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+It does not need to be mobile responsive.
 
-### `yarn build`
+API Notes
+Create a simple REST API that will serve the content needed for the client to render it. √
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The most direct approach would be to make an Express API, but if you're familiar with a different framework, that's okay.√
+Authentication is not necessary. √
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+In the data/ folder, create a file called songs.json. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When someone makes a get request to /songs, send back the contents of songs.json. 
+If you're unfamiliar with Express, or REST APIs, you'll need to setup a route handler listening for get requests for the /songs path. √
 
-### `yarn eject`
+You do not need to deploy or host this anywhere.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Bonus
+Big bonus points for any of these, monumental points for 2, unfathomable points for all.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Make UI Columns Sortable
+Allow the songs to be sorted when a user clicks on the header for the corresponding column.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Write Some Tests
+The engine is up to you, but take a look at Jest, as this is our primary test runner.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+AWS Serverless
+Instead of using Express for the API, serve the same content with an AWS serverless API using the Serverless Framework.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+GraphQL
+Instead of a REST API, serve the same content from a GraphQL API.
