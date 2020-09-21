@@ -23,11 +23,22 @@ function App() {
     fetchData()
   }, [])
 
+  const handleClick = (e) => {
+
+    let attr = e.target.innerText.toLowerCase();
+
+    let sortedSongs = songs.sort(function (a, b) {
+      return ('' + a[attr]).localeCompare(b[attr]);
+    })
+
+    setSongs(sortedSongs) // Why does my sort not work?
+  }
+
   return (
     <div className="App">
       <Navbar />
       <Switch>
-        <Route path='/songs' render={(routerProps) => <SongContainer {...routerProps} songs={songs} />} />
+        <Route path='/songs' render={(routerProps) => <SongContainer {...routerProps} songs={songs} handleClick={handleClick} />} />
         <Route exact path='/' component={Homepage} />
       </Switch>
     </div>

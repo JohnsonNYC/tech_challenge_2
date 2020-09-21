@@ -2,21 +2,17 @@ import React from 'react';
 import SongItem from './SongItem'
 
 const SongContainer = (props) => {
-    const { songs } = props
-
-    const handleClick = () => {
-        console.log('Here')
-    }
-
+    const { songs, handleClick } = props
+    console.log(songs)
     return (
         <div className='song-container'>
             <table>
                 <thead>
                     <tr>
                         <td onClick={handleClick}>Title</td>
-                        <td>Artist</td>
-                        <td>Genre</td>
-                        <td>Year</td>
+                        <td onClick={handleClick}>Artist</td>
+                        <td onClick={handleClick}>Genre</td>
+                        <td onClick={handleClick}>Year</td>
                     </tr>
                 </thead>
                 <tbody>
