@@ -1,11 +1,32 @@
 import React from 'react';
+import SongItem from './SongItem'
 
-const Songs = (props) => {
+const SongContainer = (props) => {
+    const { songs } = props
+
+    const handleClick = () => {
+        console.log('Here')
+    }
+
     return (
-        <div style={{ textAlign: 'center' }}>
-            Songs Page
+        <div className='song-container'>
+            <table>
+                <thead>
+                    <tr>
+                        <td onClick={handleClick}>Title</td>
+                        <td>Artist</td>
+                        <td>Genre</td>
+                        <td>Year</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {songs.map((song) => {
+                        return <SongItem key={song.id} song={song} />
+                    })}
+                </tbody>
+            </table>
         </div>
     );
 }
 
-export default Songs;
+export default SongContainer;
