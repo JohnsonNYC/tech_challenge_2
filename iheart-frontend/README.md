@@ -13,5 +13,7 @@ UI Checklist
 11. It does not need to be mobile responsive.√
 
 Bonus
-12. Make UI Columns Sortable √
-13. On click of table row, user gets navigated to the songs show page √
+
+- Make UI Columns Sortable √
+
+- On click of table row, user gets navigated to the songs show page √
